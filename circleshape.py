@@ -28,3 +28,9 @@ def collision_check(self, Asteroid):
     else:
         return False
 
+def asteroid_bullet_collision(bullet, asteroid):
+    radii_sum = bullet.radius + asteroid.radius
+    if bullet.position.distance_to(asteroid.position) <= radii_sum:
+        bullet.kill()
+        asteroid.kill()
+

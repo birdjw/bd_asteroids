@@ -8,6 +8,7 @@ class Player(CircleShape):
         super().__init__( x, y, PLAYER_RADIUS)
         self.rotation = 0
         self.shot_limiter = 0
+        
 
     def triangle(self):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
@@ -51,6 +52,7 @@ class Player(CircleShape):
         velocity = pygame.Vector2(0, 1).rotate(self.rotation)
         velocity *= PLAYER_SHOOT_SPEED
         bullet.velocity = velocity
+        
         
         
         

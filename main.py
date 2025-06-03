@@ -5,6 +5,7 @@ from player import *
 from asteroid import *
 from shot import *
 from asteroidfield import *
+from circleshape import *
 updatable = pygame.sprite.Group()
 drawable = pygame.sprite.Group()
 
@@ -35,6 +36,9 @@ def main():
             if collision_check(player, asteroid) == True:
                 print("Game over!")
                 sys.exit()
+        for asteroid in asteroids:
+            for shot in shots:
+                asteroid_bullet_collision(shot, asteroid)
         for thing in drawable:
             thing.draw(screen)
         pygame.display.flip()
